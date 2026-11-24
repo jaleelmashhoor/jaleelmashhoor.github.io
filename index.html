@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayed Abdul Jaleel Mashhoor | Librarian, Dubai</title>
+  <meta name="description" content="Resume of Sayed Abdul Jaleel Mashhoor, a librarian in Dubai, UAE, with 20+ years in academic, engineering and medical libraries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #0f5c6e;        /* change this colour to restyle the site */
+      --accent-soft: #e6f1f3;
+      --text: #1f2933;
+      --muted: #5f6b76;
+      --line: #e3e7eb;
+      --bg: #f6f8f9;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .nav-name { font-weight: 700; color: var(--text); }
+    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-size: 0.92rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+    /* ---------- Header ---------- */
+    header {
+      background: linear-gradient(135deg, var(--accent) 0%, #0b3f4c 100%);
+      color: #fff;
+      padding: 72px 24px 64px;
+    }
+    .header-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+    }
+    .avatar {
+      width: 148px; height: 148px; border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 4px solid rgba(255,255,255,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Playfair Display", serif; font-size: 3rem; font-weight: 700;
+      flex-shrink: 0; overflow: hidden;
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .intro { flex: 1; min-width: 260px; }
+    .intro h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; margin-bottom: 6px;
+    }
+    .intro .role { font-size: 1.2rem; opacity: 0.92; margin-bottom: 18px; }
+    .contact { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 0.95rem; margin-bottom: 26px; }
+    .contact a, .contact span { color: #fff; opacity: 0.92; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+    .btn-primary { background: #fff; color: var(--accent); }
+    .btn-outline { border: 2px solid rgba(255,255,255,0.7); color: #fff; margin-left: 10px; }
+
+    /* ---------- Sections ---------- */
+    main { max-width: 960px; margin: 0 auto; padding: 48px 24px 24px; }
+    section {
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+      padding: 36px 36px 30px; margin-bottom: 28px; scroll-margin-top: 80px;
+    }
+    h2 {
+      font-family: "Playfair Display", serif; font-size: 1.6rem; color: var(--accent);
+      margin-bottom: 22px; display: flex; align-items: center; gap: 12px;
+    }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    p + p { margin-top: 12px; }
+
+    /* Timeline (experience & education) */
+    .entry { position: relative; padding-left: 26px; padding-bottom: 26px; border-left: 2px solid var(--accent-soft); }
+    .entry:last-child { padding-bottom: 4px; }
+    .entry::before {
+      content: ""; position: absolute; left: -7px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); border: 2px solid #fff; box-shadow: 0 0 0 2px var(--accent-soft);
+    }
+    .entry-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; }
+    .entry h3 { font-size: 1.08rem; font-weight: 600; }
+    .date {
+      font-size: 0.85rem; color: var(--accent); background: var(--accent-soft);
+      padding: 2px 10px; border-radius: 20px; white-space: nowrap; height: fit-content;
+    }
+    .org { color: var(--muted); font-weight: 500; margin-bottom: 8px; }
+    .entry ul { padding-left: 18px; color: #39434d; }
+    .entry li { margin-bottom: 4px; }
+
+    /* Skills */
+    .skill-group + .skill-group { margin-top: 18px; }
+    .skill-group h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 10px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--accent-soft); color: var(--accent);
+      padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; font-weight: 500;
+    }
+
+    /* Two-column grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .card { border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+    .card p { color: var(--muted); font-size: 0.92rem; }
+
+    /* Footer */
+    footer { text-align: center; color: var(--muted); font-size: 0.88rem; padding: 24px 24px 48px; }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      header { padding: 48px 20px; text-align: center; }
+      .header-inner { justify-content: center; }
+      .contact { justify-content: center; }
+      .btn-outline { margin-left: 0; margin-top: 10px; }
+      section { padding: 26px 20px; }
+    }
+
+    /* Print nicely */
+    @media print {
+      nav, .btn { display: none !important; }
+      header { background: none; color: var(--text); padding: 0 0 20px; }
+      .contact a, .contact span { color: var(--text); }
+      section { border: none; padding: 10px 0; break-inside: avoid; }
+      body { background: #fff; }
+    }
+
+    .stats { display:flex; gap:28px; flex-wrap:wrap; margin-top:26px; }
+    .stat b { display:block; font-family:"Playfair Display",serif; font-size:1.7rem; line-height:1.1; }
+    .stat span { font-size:.85rem; opacity:.85; }
+    .list { list-style:none; }
+    .list li { padding:9px 0; border-bottom:1px dashed var(--line); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .list li:last-child { border-bottom:none; }
+    .list .when { color:var(--muted); font-size:.9rem; white-space:nowrap; }
+    .note { color:var(--muted); font-size:.92rem; margin-top:14px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-name">Sayed Abdul Jaleel Mashhoor</span>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#events">Events</a>
+        <a href="#training">Training</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-inner">
+      <!-- To use a photo: upload photo.jpg and replace "JM" with <img src="photo.jpg" alt="Sayed Abdul Jaleel Mashhoor"> -->
+      <div class="avatar">JM</div>
+
+      <div class="intro">
+        <h1>Sayed Abdul Jaleel Mashhoor</h1>
+        <div class="role">Librarian · Information &amp; Technical Services</div>
+        <div class="contact">
+          <span>📍 Dubai, UAE</span>
+          <a href="mailto:jaleelmashhoor@gmail.com">✉️ jaleelmashhoor@gmail.com</a>
+          <a href="http://informationlibrarian.blogspot.com/" target="_blank" rel="noopener">📝 Blog</a>
+        </div>
+        <a class="btn btn-primary" href="resume.pdf" download>⬇ Download Resume (PDF)</a>
+        <a class="btn btn-outline" href="resume.pdf" target="_blank" rel="noopener">View PDF</a>
+        <div class="stats">
+          <div class="stat"><b>20+</b><span>years in libraries</span></div>
+          <div class="stat"><b>3</b><span>sectors: academic, engineering, medical</span></div>
+          <div class="stat"><b>2006</b><span>working in the UAE since</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a library professional with more than 20 years of experience across academic, engineering
+        and medical libraries in the UAE and India. My work covers library management, cataloguing and
+        classification, circulation, reference services, electronic resources and user support.
+      </p>
+      <p>
+        I currently work at the Mohammed Bin Rashid University of Medicine and Health Sciences (MBRU) in Dubai,
+        where I look after the theses and dissertations in the MBRU Knowledge Repository, run information
+        literacy sessions and library events, and contribute to library planning, budgets and KPIs.
+      </p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Senior Officer, Information &amp; Technical Services – Library</h3>
+          <span class="date">Jun 2025 – Present</span>
+        </div>
+        <div class="org">Mohammed Bin Rashid University of Medicine and Health Sciences (MBRU) · Dubai</div>
+        <ul>
+          <li>Manages and updates theses and dissertations in the MBRU Knowledge Repository.</li>
+          <li>Runs information literacy sessions and library events, working with vendors and speakers, and prepares the activity calendar.</li>
+          <li>Indexes, classifies and catalogues library materials, and provides reference services.</li>
+          <li>Handles annual subscriptions and vendor liaison, and contributes to the library budget, KPIs, business plan and business processes.</li>
+          <li>Prepares library statistics and reports covering the repository, article requests and events.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Officer, Information &amp; Technical Services – Library</h3>
+          <span class="date">2022 – Jun 2025</span>
+        </div>
+        <div class="org">Mohammed Bin Rashid University of Medicine and Health Sciences (MBRU) · Dubai</div>
+        <ul>
+          <li>Cataloguing, classification, reference and circulation on the Millennium library system.</li>
+          <li>Collection development, annual subscriptions and budget preparation.</li>
+          <li>Repository management, library statistics, surveys and community engagement programmes.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Executive – Library</h3>
+          <span class="date">2018 – 2022</span>
+        </div>
+        <div class="org">Mohammed Bin Rashid University of Medicine and Health Sciences (MBRU) · Dubai</div>
+        <ul>
+          <li>Circulation, reference, literature searching and OPAC support for library users.</li>
+          <li>Kept subscribed e-resources available and accessible, working with IT to resolve access issues.</li>
+          <li>Prepared faculty biographies and showcased research publications by MBRU faculty.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Technical Librarian</h3>
+          <span class="date">2008 – 2018</span>
+        </div>
+        <div class="org">ADNOC Refining – Ruwais Refinery · Abu Dhabi</div>
+        <ul>
+          <li>Managed the technical library's print and electronic resources, including international standards, books and periodicals.</li>
+          <li>Handled e-resource subscriptions, access set-up, licences, renewals and budgets.</li>
+          <li>Worked with IT on authentication so authorised users could access e-resources.</li>
+          <li>Maintained the library web and portal pages and shared the EOS library database with ADNOC Refining HQ.</li>
+          <li>Ran library orientation and user training, and contributed to the ADNOC Refining News Magazine.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Library Assistant</h3>
+          <span class="date">2006 – 2008</span>
+        </div>
+        <div class="org">Abu Dhabi University · Abu Dhabi</div>
+        <ul>
+          <li>Provided reference service, circulation, and cataloguing of books and serials.</li>
+          <li>Managed RFID and library security systems, and ran library orientations.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Librarian</h3>
+          <span class="date">2005 – 2006</span>
+        </div>
+        <div class="org">Farook Institute of Management Studies · Kerala, India</div>
+        <ul>
+          <li>Ran the library: acquisitions, DDC classification, AACR2 cataloguing and circulation.</li>
+          <li>Built the library database in Microsoft Access and supervised library staff.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head"><h3>PhD Research Scholar</h3><span class="date">In progress</span></div>
+        <div class="org">NIILM University · Kaithal, Haryana, India</div>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><h3>Master of Library and Information Science (MLISc)</h3></div>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><h3>Bachelor of Library and Information Science (BLISc)</h3></div>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><h3>Master of Commerce (M.Com)</h3><span class="date">Coursework completed</span></div>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><h3>Bachelor of Commerce (B.Com)</h3></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill-group">
+        <h4>Professional Expertise</h4>
+        <div class="tags">
+          <span class="tag">Electronic Library Management</span>
+          <span class="tag">Cataloguing &amp; Classification</span>
+          <span class="tag">Reference Services</span>
+          <span class="tag">Online Searching</span>
+          <span class="tag">Collection Development</span>
+          <span class="tag">E-Resources &amp; Subscriptions</span>
+          <span class="tag">Knowledge Repository</span>
+          <span class="tag">Information Literacy</span>
+          <span class="tag">Planning &amp; Budgeting</span>
+          <span class="tag">Library KPIs &amp; Statistics</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Library Systems</h4>
+        <div class="tags">
+          <span class="tag">Millennium</span>
+          <span class="tag">EOS Web</span>
+          <span class="tag">Q-Series</span>
+          <span class="tag">Virtua</span>
+          <span class="tag">Libsys</span>
+          <span class="tag">Libsuite</span>
+          <span class="tag">Book Magic</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Databases &amp; Tools</h4>
+        <div class="tags">
+          <span class="tag">Access Engineering</span>
+          <span class="tag">ProQuest</span>
+          <span class="tag">IEEE Xplore</span>
+          <span class="tag">ebrary</span>
+          <span class="tag">IHS</span>
+          <span class="tag">EMX 95</span>
+          <span class="tag">Microsoft Access</span>
+          <span class="tag">Blogger</span>
+          <span class="tag">HTML</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <div class="grid">
+        <div class="card"><h3>Solid Performer</h3><p>ADNOC Refining · 2018</p></div>
+        <div class="card"><h3>Administrative Service Award</h3><p>Abu Dhabi University · 2007–2008</p></div>
+        <div class="card"><h3>Students' Union General Secretary</h3><p>Farook College, Kozhikode · 2002–03</p></div>
+        <div class="card"><h3>First Prize, Elocution</h3><p>College level and Keralotsav</p></div>
+      </div>
+    </section>
+
+    <section id="events">
+      <h2>Workshops &amp; Events Organised</h2>
+      <ul class="list">
+        <li><span>Book Launch</span><span class="when">Jan 2026</span></li>
+        <li><span>Living Books</span><span class="when">Oct 2025</span></li>
+        <li><span>Manuscript Writing, Peer Review and Journal Selection with Scopus Metrics</span><span class="when">Sep 2025</span></li>
+        <li><span>Book Readers Club</span><span class="when">Mar 2025</span></li>
+        <li><span>Training on e-Library usage, TAKREER Ruwais Refinery (East &amp; West)</span><span class="when">Feb 2017</span></li>
+        <li><span>Access Engineering (McGraw-Hill) training, TAKREER Ruwais Refinery</span><span class="when">Mar 2014</span></li>
+        <li><span>ASTM Standards &amp; Digital Library training, TAKREER Ruwais Refinery</span><span class="when">Dec 2012</span></li>
+        <li><span>IHS standards subscription training, TAKREER Ruwais Refinery</span><span class="when">Mar 2010</span></li>
+        <li><span>Book exhibition, Abu Dhabi University Library</span><span class="when">May 2008</span></li>
+      </ul>
+    </section>
+
+    <section id="training">
+      <h2>Professional Development</h2>
+      <ul class="list">
+        <li><span>Mendeley for Researchers: From Literature Collection to Citation</span><span class="when">Jul 2026</span></li>
+        <li><span>Frontiers of Science &amp; Technology for a Sustainable Future</span><span class="when">Feb 2026</span></li>
+        <li><span>Dubai Health Research Conference</span><span class="when">Nov 2025</span></li>
+        <li><span>Writing for Peer-Reviewed Journals and Maximising Visibility through Open Access</span><span class="when">Nov 2025</span></li>
+        <li><span>Systematic Literature Review: A Practical Guide</span><span class="when">Dec 2024</span></li>
+        <li><span>OCLC Cataloguing Community Meeting – Europe, Middle East &amp; Africa</span><span class="when">Feb 2024</span></li>
+        <li><span>Covidence Patron Training</span><span class="when">Mar 2023</span></li>
+        <li><span>Cataloguing Manuscripts &amp; Archival Collections Using RDA, Sharjah</span><span class="when">Nov 2022</span></li>
+        <li><span>ALA–SIBF Library Conference, Sharjah</span><span class="when">2015, 2017, 2022</span></li>
+        <li><span>Advanced Workshop on Koha Integrated Library Management Software</span><span class="when">Dec 2017</span></li>
+      </ul>
+      <p class="note">The full list of training, seminars and workshops is in my <a href="resume.pdf" target="_blank" rel="noopener">resume (PDF)</a>.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        I'm happy to connect about library, information services and research support work.
+        Email me at <a href="mailto:jaleelmashhoor@gmail.com">jaleelmashhoor@gmail.com</a>
+        or visit my blog at <a href="http://informationlibrarian.blogspot.com/" target="_blank" rel="noopener">informationlibrarian.blogspot.com</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Sayed Abdul Jaleel Mashhoor · <a href="resume.pdf" download>Download Resume</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
